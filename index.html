@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en" data-edition="site" data-kofi="https://ko-fi.com/s/627b7ebda8">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Boostport: move your Arc Boosts before Dec 22</title>
+<meta name="description" content="Arc stops working on December 22, 2026. Boostport turns your Arc Boosts into a Chrome extension and userscripts for Dia, Chrome, Edge, Brave, Zen, Firefox and Safari. Runs in your browser; nothing is uploaded.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://matbcontrol.github.io/boostport/">
+<meta property="og:title" content="Boostport: move your Arc Boosts before Dec 22">
+<meta property="og:description" content="Arc stops on December 22. Dia and Zen don't bring your Boosts. Boostport turns them into a Chrome extension and userscripts, in your browser, nothing uploaded.">
+<meta property="og:image" content="https://matbcontrol.github.io/boostport/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
+<script src="src/core.js" defer></script>
+<script src="src/app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#dock">Skip to the converter</a>
+
+<header class="bar">
+  <a class="bar-mark" href="#top" aria-label="Boostport, back to top">Boostport</a>
+  <nav class="bar-nav" aria-label="Sections">
+    <a href="#dock">Converter</a>
+    <a href="#crates">Where they go</a>
+    <a href="#questions">Questions</a>
+  </nav>
+</header>
+
+<main id="top">
+  <!-- HERO: the counter object is the cargo manifest -->
+  <section class="hero" aria-labelledby="hero-title">
+    <figure class="manifest" data-ui aria-label="Example cargo manifest of Arc Boosts">
+      <div class="manifest-page is-shown" data-page="0">
+        <div class="manifest-head">
+          <p class="manifest-title">Cargo manifest</p>
+          <p class="manifest-meta">Vessel Boostport<br>Departs 22 Dec 2026</p>
+        </div>
+        <p class="manifest-origin">From ~/Library/Application Support/Arc/boosts</p>
+        <ul class="manifest-items">
+          <li><span class="mi-name">Quiet YouTube</span><span class="mi-site">www.youtube.com</span><span class="mi-load">styles and script</span></li>
+          <li><span class="mi-name">Calm Hacker News</span><span class="mi-site">news.ycombinator.com</span><span class="mi-load">styles</span></li>
+          <li><span class="mi-name">Focus Gmail</span><span class="mi-site">mail.google.com</span><span class="mi-load">styles</span></li>
+          <li><span class="mi-name">Esc goes back</span><span class="mi-site">twitter.com and x.com</span><span class="mi-load">script</span></li>
+        </ul>
+        <p class="manifest-foot"><span>4 Boosts aboard</span><span>0 bytes uploaded</span></p>
+      </div>
+      <div class="manifest-page" data-page="1" aria-hidden="true">
+        <div class="manifest-head">
+          <p class="manifest-title">Cargo manifest</p>
+          <p class="manifest-meta">Vessel Boostport<br>Departs 22 Dec 2026</p>
+        </div>
+        <p class="manifest-origin">Bound for Dia, Chrome, Edge, Brave</p>
+        <ul class="manifest-items">
+          <li><span class="mi-name">my-arc-boosts</span><span class="mi-site">one unpacked extension</span><span class="mi-load">manifest.json</span></li>
+          <li><span class="mi-name">quiet-youtube</span><span class="mi-site">boosts folder</span><span class="mi-load">styles.css, content.js</span></li>
+          <li><span class="mi-name">calm-hacker-news</span><span class="mi-site">boosts folder</span><span class="mi-load">styles.css</span></li>
+          <li><span class="mi-name">focus-gmail</span><span class="mi-site">boosts folder</span><span class="mi-load">styles.css</span></li>
+        </ul>
+        <p class="manifest-foot"><span>Load unpacked once</span><span>Manifest V3</span></p>
+      </div>
+      <div class="manifest-page" data-page="2" aria-hidden="true">
+        <div class="manifest-head">
+          <p class="manifest-title">Cargo manifest</p>
+          <p class="manifest-meta">Vessel Boostport<br>Departs 22 Dec 2026</p>
+        </div>
+        <p class="manifest-origin">Bound for Zen, Firefox, Safari</p>
+        <ul class="manifest-items">
+          <li><span class="mi-name">all-boosts.user.js</span><span class="mi-site">every Boost in one script</span><span class="mi-load">Violentmonkey</span></li>
+          <li><span class="mi-name">quiet-youtube.user.js</span><span class="mi-site">single</span><span class="mi-load">Tampermonkey</span></li>
+          <li><span class="mi-name">calm-hacker-news.user.css</span><span class="mi-site">style only</span><span class="mi-load">Stylus</span></li>
+          <li><span class="mi-name">esc-goes-back.user.js</span><span class="mi-site">single</span><span class="mi-load">Userscripts</span></li>
+        </ul>
+        <p class="manifest-foot"><span>Install one file</span><span>Works offline</span></p>
+      </div>
+    </figure>
+
+    <p class="hero-wordmark" aria-hidden="true">Boostport</p>
+    <h1 id="hero-title" class="hero-title">Your Arc Boosts, out before Dec&nbsp;22</h1>
+    <p class="hero-lead">Arc stops working on December 22. Dia and Zen bring over your tabs, not your Boosts. Boostport packs every Boost into an extension and userscripts, right here in your browser.</p>
+
+    <div class="hero-row">
+      <p class="hero-spec"><span class="js-days">Final departure Dec 22</span></p>
+      <a class="btn" href="#dock">Load my Boosts</a>
+      <p class="hero-spec">Free to check, $5 to ship</p>
+    </div>
+  </section>
+
+  <!-- THE LIVE THING: the loading dock -->
+  <section class="dock" id="dock" aria-labelledby="dock-title">
+    <div class="dock-guide">
+      <h2 id="dock-title" class="h2">Load your Boosts</h2>
+      <p>Arc keeps every Boost as a small folder on your disk. Point Boostport at that folder and it lists what it finds, for free. If the list looks right, $5 gets you the archive.</p>
+      <h3 class="h3">On a Mac</h3>
+      <p>Your Boosts live here. In the folder picker press Cmd&nbsp;Shift&nbsp;G and paste the path.</p>
+      <p class="path-row"><code class="path js-path">~/Library/Application Support/Arc/boosts</code><button class="btn-small js-copy" type="button">Copy path</button></p>
+      <h3 class="h3">On Windows</h3>
+      <p>Arc lives in a package folder whose name starts with <code class="path">TheBrowserCompany.Arc</code>, inside <code class="path">%LOCALAPPDATA%\Packages</code>. Pick that folder and Boostport searches it for Boosts.</p>
+      <h3 class="h3">Copy it today</h3>
+      <p>Once Arc is gone its folder may go with it. A copy of the boosts folder anywhere on your disk works just as well.</p>
+    </div>
+
+    <div class="dock-panel" data-ui>
+      <div class="drop js-drop" tabindex="-1">
+        <p class="drop-title">Drop the boosts folder here</p>
+        <p class="drop-sub">or choose it. Files are read in this tab and never sent anywhere.</p>
+        <div class="drop-actions">
+          <label class="btn btn-file">
+            <input class="js-pick" type="file" webkitdirectory directory multiple>
+            Choose folder
+          </label>
+          <button class="btn btn-paper js-demo" type="button">Use sample cargo</button>
+        </div>
+        <p class="drop-status js-status" role="status" aria-live="polite"></p>
+      </div>
+
+      <div class="cargo js-cargo" hidden>
+        <div class="cargo-head">
+          <h3 class="h3 js-cargo-title">Your manifest</h3>
+          <button class="btn-small js-reset" type="button">Start over</button>
+        </div>
+        <table class="cargo-table">
+          <caption class="visually-hidden">Boosts found in the folder</caption>
+          <thead>
+            <tr><th scope="col">Ship</th><th scope="col">Boost</th><th scope="col">Runs on</th><th scope="col">Contents</th></tr>
+          </thead>
+          <tbody class="js-rows"></tbody>
+        </table>
+        <div class="palette js-palette" hidden>
+          <h3 class="h3">Arc colors</h3>
+          <p>Some Boosts paint with Arc's own color variables, which other browsers don't have. Pick the colors they should use.</p>
+          <div class="palette-grid js-palette-grid"></div>
+        </div>
+        <div class="cargo-foot">
+          <p class="js-summary"></p>
+          <button class="btn js-download" type="button">Download archive</button>
+          <a class="btn js-buy" href="#price" target="_blank" rel="noopener" hidden>Ship them for $5</a>
+        </div>
+        <p class="cargo-buy-note js-buy-note" hidden>For $5 you get Boostport as one file that runs on your own computer, offline. Open it, pick this same folder, download the archive. The list above is exactly what it will ship.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWCASE: two crates -->
+  <section class="crates" id="crates" aria-labelledby="crates-title">
+    <div class="crate crate-ink">
+      <h2 id="crates-title" class="h2 crate-heading">Two crates out</h2>
+      <pre class="crate-object" data-ui aria-label="Part of the generated extension manifest"><code>{
+  "manifest_version": 3,
+  "name": "My Arc Boosts",
+  "content_scripts": [
+    {
+      "matches": ["*://*.www.youtube.com/*"],
+      "css": ["boosts/quiet-youtube/styles.css"],
+      "js": ["boosts/quiet-youtube/content.js"]
+    },
+    {
+      "matches": ["*://*.news.ycombinator.com/*"],
+      "css": ["boosts/calm-hacker-news/styles.css"]
+    }
+  ]
+}</code></pre>
+      <div class="crate-row">
+        <p><strong>Dia, Chrome, Edge, Brave</strong><br>One extension, loaded once</p>
+        <a class="btn btn-orange" href="#q-install">Install steps</a>
+      </div>
+    </div>
+    <div class="crate crate-paper">
+      <pre class="crate-object" data-ui aria-label="Header of the generated userscript"><code>// ==UserScript==
+// @name         All my Arc Boosts
+// @namespace    boostport
+// @match        *://*.www.youtube.com/*
+// @match        *://*.news.ycombinator.com/*
+// @match        *://*.twitter.com/*
+// @match        *://*.x.com/*
+// @run-at       document-start
+// @grant        none
+// ==/UserScript==</code></pre>
+      <div class="crate-row">
+        <p><strong>Zen, Firefox, Safari</strong><br>One userscript, any manager</p>
+        <a class="btn" href="#q-install">Install steps</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS: many into one -->
+  <section class="flow" aria-labelledby="flow-title">
+    <div class="flow-intro">
+      <h2 id="flow-title" class="h2">Many in, one out</h2>
+      <p>Under the hood every Arc Boost is already a tiny Chrome extension, filed under a random id. Boostport reads them, undoes the Arc-only parts and packs them together.</p>
+    </div>
+    <svg class="flow-diagram js-flow" viewBox="0 0 1200 270" role="img" aria-label="Scattered squares gather into a tight ribbon, then leave as neat rows"></svg>
+    <div class="flow-steps">
+      <div><h3 class="h3">Find</h3><p>Every folder with a boost.config.json, wherever it sits inside what you picked.</p></div>
+      <div><h3 class="h3">Repack</h3><p>Styles, scripts and site rules, with twitter.com Boosts taught about x.com and Arc colors filled in.</p></div>
+      <div><h3 class="h3">Ship</h3><p>One archive: an extension, userscripts, Stylus styles and a readme with install steps.</p></div>
+    </div>
+  </section>
+
+  <!-- FEATURES: comparison set as text -->
+  <section class="compare" aria-labelledby="compare-title">
+    <h2 id="compare-title" class="h2">Next to the importers</h2>
+    <div class="compare-table" role="table" aria-label="Boostport compared with the Dia and Zen importers">
+      <div class="ct-row ct-head" role="row">
+        <span role="columnheader" class="ct-cap">What moves</span>
+        <span role="columnheader" class="ct-us">Boostport</span>
+        <span role="columnheader">Dia importer</span>
+        <span role="columnheader">Zen importer</span>
+      </div>
+      <div class="ct-row" role="row"><span role="rowheader" class="ct-cap">Boost styles</span><span role="cell" class="ct-us">Yes, every Boost</span><span role="cell">No</span><span role="cell">No, rebuild by hand</span></div>
+      <div class="ct-row" role="row"><span role="rowheader" class="ct-cap">Boost scripts</span><span role="cell" class="ct-us">Yes, as extension or userscript</span><span role="cell">No</span><span role="cell">No</span></div>
+      <div class="ct-row" role="row"><span role="rowheader" class="ct-cap">Arc palette colors</span><span role="cell" class="ct-us">Filled with colors you pick</span><span role="cell">No</span><span role="cell">No</span></div>
+      <div class="ct-row" role="row"><span role="rowheader" class="ct-cap">twitter.com Boosts on x.com</span><span role="cell" class="ct-us">Yes, added for you</span><span role="cell">No</span><span role="cell">No</span></div>
+      <div class="ct-row" role="row"><span role="rowheader" class="ct-cap">Tabs and Spaces</span><span role="cell" class="ct-us">Not its job</span><span role="cell">Yes</span><span role="cell">Yes, Spaces and tabs</span></div>
+      <div class="ct-row" role="row"><span role="rowheader" class="ct-cap">Passwords and history</span><span role="cell" class="ct-us">Not its job</span><span role="cell">Yes</span><span role="cell">See Zen's notes</span></div>
+      <div class="ct-row" role="row"><span role="rowheader" class="ct-cap">Easels</span><span role="cell" class="ct-us">No</span><span role="cell">No</span><span role="cell">No</span></div>
+      <div class="ct-row" role="row" id="price"><span role="rowheader" class="ct-cap">Price</span><span role="cell" class="ct-us">Free to check, $5 once to ship</span><span role="cell">Free</span><span role="cell">Free</span></div>
+    </div>
+  </section>
+
+  <!-- FAQ: a band per question -->
+  <section class="faq" id="questions" aria-labelledby="faq-title">
+    <div class="faq-head"><h2 id="faq-title" class="faq-title">Questions</h2></div>
+    <div class="band">
+      <h3 class="band-q">Does anything leave my computer?</h3>
+      <p class="band-a">No. The page reads the folder inside this tab, builds the archive in memory and hands it to you. Its security policy blocks every network request, so it could not send your Boosts anywhere even if it tried. Turn off Wi-Fi and it still works.</p>
+    </div>
+    <div class="band">
+      <h3 class="band-q">What do I get for $5?</h3>
+      <div class="band-a">
+        <p>Boostport as a single file you keep. Open it in any browser, with or without internet, pick your boosts folder and download the archive as many times as you like. It is the same converter as this page, with the download switched on.</p>
+        <p>Before you pay, this page shows every Boost it found and what will happen to each one. You can also download the archive for the sample cargo for free and look inside.</p>
+      </div>
+    </div>
+    <div class="band" id="q-install">
+      <h3 class="band-q">How do I install what I get?</h3>
+      <div class="band-a">
+        <p>Dia, Chrome, Edge, Brave: unzip the archive somewhere you will keep it, open the extensions page, switch on Developer mode, choose Load unpacked and pick chromium/my-arc-boosts.</p>
+        <p>Zen, Firefox: install Violentmonkey or Tampermonkey, then open userscripts/all-boosts.user.js. Safari: the Userscripts app takes the same file.</p>
+      </div>
+    </div>
+    <div class="band">
+      <h3 class="band-q">What doesn't move?</h3>
+      <p class="band-a">Boosts that restyle Arc's own pages, because no other browser has them, and Easels. If a Boost holds a part Boostport can't read yet, the manifest names it instead of dropping it quietly.</p>
+    </div>
+    <div class="band">
+      <h3 class="band-q">Will my scripts behave the same?</h3>
+      <p class="band-a">In the extension, yes: Arc ran Boosts as content scripts and so does Chrome. As userscripts they run in the page itself, which covers almost every Boost. Scripts that call chrome.* APIs are flagged and should go through the extension.</p>
+    </div>
+    <div class="band">
+      <h3 class="band-q">Is this made by Arc?</h3>
+      <p class="band-a">No. Boostport is an independent tool and is not affiliated with The Browser Company. Arc and Dia are their names, used here only to say what this works with.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-cols">
+    <div><p class="foot-lead">Boostport</p><p>Moves Arc Boosts to other browsers.</p><p>Runs in your browser.</p></div>
+    <div><p class="foot-lead">On this page</p><p><a href="#dock">Converter</a></p><p><a href="#crates">Where they go</a></p><p><a href="#questions">Questions</a></p></div>
+    <div><p class="foot-lead">Privacy</p><p>No uploads, no cookies,</p><p>no analytics, no requests.</p></div>
+    <div><p class="foot-lead">Last sailing</p><p>Arc stops on 22 December 2026.</p><p class="js-days-foot">Copy your folder today.</p></div>
+  </div>
+  <svg class="foot-mark" viewBox="0 0 1000 150" role="img" aria-label="Boostport"><text x="0" y="138" textLength="1000" lengthAdjust="spacingAndGlyphs">BOOSTPORT</text></svg>
+  <p class="foot-legal">Independent tool, not affiliated with The Browser Company. Arc and Dia are trademarks of their owners.</p>
+</footer>
+</body>
+</html>
