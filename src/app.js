@@ -197,7 +197,10 @@
   const selected = new Set();
   const palette = {};
 
-  const canDownload = () => EDITION === 'full' || cargoIsSample;
+  // On the public site up to FREE_LIMIT Boosts ship for free; more need the paid file.
+  const FREE_LIMIT = 2;
+  const chosenCount = () => boosts.filter((b) => selected.has(b.id) && b.convertible).length;
+  const canDownload = () => EDITION === 'full' || cargoIsSample || chosenCount() <= FREE_LIMIT;
 
   function contentsLabel(b) {
     const bits = [];
@@ -266,14 +269,16 @@
     if (canDownload()) {
       dl.hidden = false;
       dl.disabled = !chosen.length;
-      dl.textContent = cargoIsSample && EDITION !== 'full' ? 'Download sample archive' : 'Download archive';
+      dl.textContent = EDITION === 'full' ? 'Download archive'
+        : cargoIsSample ? 'Download sample archive'
+        : 'Download archive, free';
       if (buy) buy.hidden = true;
       if (note) note.hidden = true;
     } else {
       dl.hidden = true;
       if (buy) {
         buy.hidden = !chosen.length;
-        buy.textContent = `Ship ${chosen.length} Boost${chosen.length === 1 ? '' : 's'} for $5`;
+        buy.textContent = `Ship all ${chosen.length} Boosts for $5`;
         buy.href = KOFI_URL || '#price';
         if (!KOFI_URL) buy.removeAttribute('target');
       }
