@@ -10,7 +10,9 @@ Boostport reads your Arc boosts folder and turns every Boost into:
 
 **Site:** https://matbcontrol.github.io/boostport/
 
-The page lists every Boost it finds and what will happen to it, and converts up to two Boosts for free. For more, the full converter is a single offline file, available for $5 on [Ko-fi](https://ko-fi.com/s/627b7ebda8).
+The page lists every Boost it finds and what will happen to it, then packs them into one archive. It's free, with no account and no limit. If you'd rather run it without internet, [boostport-offline.zip](https://matbcontrol.github.io/boostport/boostport-offline.zip) is the same converter as a single HTML file.
+
+If it saved your Boosts, tips go to [Ko-fi](https://ko-fi.com/matbcontrol).
 
 ## Privacy
 

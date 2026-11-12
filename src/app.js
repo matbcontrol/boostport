@@ -6,8 +6,8 @@
   const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
 
   const DEPARTURE = new Date(2026, 11, 22); // 22 Dec 2026, local time
-  // "site": the public page, where real folders are listed for free and the
-  // archive is sold on Ko-fi. "full": the paid file, download always on.
+  // "site": the public page. "full": the offline single file. Both convert
+  // every Boost for free; KOFI_URL is an optional tip jar shown after a download.
   const EDITION = document.documentElement.getAttribute('data-edition') || 'site';
   const KOFI_URL = document.documentElement.getAttribute('data-kofi') || '';
 
@@ -197,10 +197,8 @@
   const selected = new Set();
   const palette = {};
 
-  // On the public site up to FREE_LIMIT Boosts ship for free; more need the paid file.
-  const FREE_LIMIT = 2;
-  const chosenCount = () => boosts.filter((b) => selected.has(b.id) && b.convertible).length;
-  const canDownload = () => EDITION === 'full' || cargoIsSample || chosenCount() <= FREE_LIMIT;
+  // Set after a real (not sample) archive was downloaded; shows the tip jar.
+  let shipped = false;
 
   function contentsLabel(b) {
     const bits = [];
@@ -264,26 +262,20 @@
       : 'Tick at least one Boost';
 
     const dl = $('.js-download');
-    const buy = $('.js-buy');
-    const note = $('.js-buy-note');
-    if (canDownload()) {
-      dl.hidden = false;
-      dl.disabled = !chosen.length;
-      dl.textContent = EDITION === 'full' ? 'Download archive'
-        : cargoIsSample ? 'Download sample archive'
-        : 'Download archive, free';
-      if (buy) buy.hidden = true;
-      if (note) note.hidden = true;
-    } else {
-      dl.hidden = true;
-      if (buy) {
-        buy.hidden = !chosen.length;
-        buy.textContent = `Ship all ${chosen.length} Boosts for $5`;
-        buy.href = KOFI_URL || '#price';
-        if (!KOFI_URL) buy.removeAttribute('target');
-      }
-      if (note) note.hidden = false;
+    dl.disabled = !chosen.length;
+    dl.textContent = cargoIsSample ? 'Download sample archive' : 'Download archive';
+    paintTip();
+  }
+
+  function paintTip() {
+    const tip = $('.js-tip');
+    const note = $('.js-tip-note');
+    const show = shipped && !!KOFI_URL;
+    if (tip) {
+      tip.hidden = !show;
+      if (KOFI_URL) tip.href = KOFI_URL;
     }
+    if (note) note.hidden = !show;
   }
 
   function renderPalette() {
@@ -310,6 +302,7 @@
   function showCargo(result, sourceLabel, isSample) {
     boosts = result.boosts;
     cargoIsSample = !!isSample;
+    shipped = false;
     selected.clear();
     for (const b of boosts) if (b.convertible && b.enabledInArc) selected.add(b.id);
     if (!boosts.length) {
@@ -335,7 +328,7 @@
 
   function download() {
     const chosen = boosts.filter((b) => selected.has(b.id) && b.convertible);
-    if (!chosen.length || !canDownload()) return;
+    if (!chosen.length) return;
     const files = core.buildExport(chosen, { palette });
     const zip = core.makeZip(files);
     const blob = new Blob([zip], { type: 'application/zip' });
@@ -348,6 +341,7 @@
     a.remove();
     setTimeout(() => URL.revokeObjectURL(url), 4000);
     $('.js-summary').textContent = `Archive ready: ${chosen.length} Boost${chosen.length === 1 ? '' : 's'}. Install steps are in README.txt.`;
+    if (!cargoIsSample) { shipped = true; paintTip(); }
   }
 
   // Sample cargo, written for this page.
@@ -407,6 +401,8 @@
     $('.js-reset').addEventListener('click', () => {
       boosts = [];
       selected.clear();
+      shipped = false;
+      paintTip();
       $('.js-cargo').hidden = true;
       status('');
       drop.scrollIntoView({ block: 'center' });

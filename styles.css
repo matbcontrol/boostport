@@ -226,8 +226,8 @@ code { font-family: var(--code); font-size: 0.92em; }
   display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px;
 }
 .cargo-foot p { margin: 0; font-weight: 600; }
-.cargo-foot .btn[hidden], .js-buy[hidden] { display: none; }
-.cargo-buy-note { margin: 14px 0 0; font-size: var(--step-small); max-width: none; }
+.cargo-foot .btn[hidden], .js-tip[hidden] { display: none; }
+.cargo-tip-note { margin: 14px 0 0; font-size: var(--step-small); max-width: none; }
 
 /* ---------- crates: two objects, two fields ---------- */
 .crates { display: grid; grid-template-columns: 1fr 1fr; }
@@ -314,7 +314,7 @@ p.band-a { max-width: none; }
 }
 .foot-legal { grid-row: 4; font-size: var(--step-small); margin: 0; max-width: none; color: #ffb27e; }
 
-/* ---------- paid edition (tool.html) ---------- */
+/* ---------- offline edition (tool.html) ---------- */
 .bar-static { position: static; background: var(--bg); }
 .bar-note { margin: 0; font-weight: 600; font-size: var(--step-small); text-align: right; }
 .dock-first { padding-top: 72px; }
